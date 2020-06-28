@@ -1,0 +1,3 @@
+docker-compose exec php php artisan config:cache
+
+docker-compose exec php php artisan migrate
