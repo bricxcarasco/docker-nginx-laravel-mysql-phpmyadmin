@@ -20,6 +20,4 @@ http://localhost:8881/
 
 ## Developer
 
-```bash
 [Bricx Carasco](https://github.com/bricxcarasco)
-```
