@@ -15,15 +15,18 @@ docker rm laravel-php laravel-nginx-server laravel-mysql-server laravel-phpmyadm
 echo "\n${YELLOW}Build and up all containers ...${NOCOLOR}\n"
 docker-compose up -d --build
 
-if [ -d "./src/vendor" ] 
+if [ ! -d "./src/vendor" ] 
 then
-    echo "\n${RED}Composer install running..${NOCOLOR}\n"
+    echo "\n${LIGHTCYAN}Composer install running..${NOCOLOR}\n"
     docker-compose run --rm composer install
+else
+    echo "\n${LIGHTCYAN}Composer update running..${NOCOLOR}\n"
+    docker-compose run --rm composer update
 fi
 
-echo "\n${YELLOW}Clear views, routes, configurations and caches ...${NOCOLOR}\n"
+echo "\n${LIGHTGRAY}Clear views, routes, configurations and caches ...${NOCOLOR}\n"
 docker-compose run --rm artisan optimize
 sudo chmod 777 -R src/storage/ src/bootstrap/cache/
 
-echo "\n${GREEN}Process done ...${NOCOLOR}\n"
-echo "${YELLOW}Happy coding !! :-)${NOCOLOR}\n"
+echo "\n${LIGHTCYAN}Process done ...${NOCOLOR}\n"
+echo "${WHITE}Happy coding !! ${YELLOW}SMILE ${NOCOLOR}\n"
