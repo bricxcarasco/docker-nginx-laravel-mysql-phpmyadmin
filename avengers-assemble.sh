@@ -1,4 +1,6 @@
 #!/bin/bash
+# Maintainer: Bricx Carasco bricxcarasco.gss@gmail.com
+
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
