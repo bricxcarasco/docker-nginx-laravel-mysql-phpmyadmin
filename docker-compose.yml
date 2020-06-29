@@ -61,3 +61,33 @@ services:
             - PMA_PORT=3306
         networks:
             - laravel
+    composer:
+        image: composer:latest
+        container_name: laravel-composer
+        volumes:
+            - ./src:/var/www/html
+        working_dir: /var/www/html
+        networks:
+            - laravel
+    npm:
+        image: node:12.18
+        container_name: laravel-npm
+        volumes: 
+            - ./src:/var/www/html
+        working_dir: /var/www/html
+        entrypoint: ['npm']
+        networks:
+            - laravel
+    artisan:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: laravel-artisan
+        volumes:
+            - ./src:/var/www/html
+        depends_on:
+            - mysql
+        working_dir: /var/www/html
+        entrypoint: ['/var/www/html/artisan']
+        networks:
+            - laravel
