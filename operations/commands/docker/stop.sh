@@ -1,5 +1,5 @@
 #!/bin/bash
-# Maintainer: Bricx Carasco bricxcarasco.gss@gmail.com
+# Maintainer: Bricx Carasco bricxraincarasco21@gmail.com
 
 RED='\033[0;31m'
 LIGHTCYAN='\033[1;36m'
