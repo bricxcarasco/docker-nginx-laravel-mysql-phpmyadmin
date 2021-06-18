@@ -1,4 +1,4 @@
-FROM php:7.2-fpm-alpine
+FROM php:8.0-fpm-alpine
 
 LABEL maintainer Bricx Carasco <bricxraincarasco21@gmail.com>
 
